@@ -15,12 +15,12 @@ while len(pesel) != 11:
     if len(pesel) != 11:
         print("PESEL musi składać się z 11 cyfr.")
 
-trimmed_pesel = pesel[:10]
+pesel_bez_ostatniej_cyfry = pesel[:10]
 
 suma_kontrolna = 0
 
 for index in range(0, len(wagi)):
-    iloczyn = wagi[index]*int(trimmed_pesel[index])
+    iloczyn = wagi[index]*int(pesel_bez_ostatniej_cyfry[index])
     suma_kontrolna += ostatnia_cyfra_liczby(iloczyn)
 
 cyfra_kontrolna = 10 - ostatnia_cyfra_liczby(suma_kontrolna)
